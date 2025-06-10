@@ -21,12 +21,18 @@ public class MailUtils {
         props.put("mail.smtp.auth", "true");
         //此处填写SMTP服务器
         props.put("mail.smtp.host", "smtp.qq.com");
-        //端口号，QQ邮箱端口587
-        props.put("mail.smtp.port", "587");
+        //端口号，QQ邮箱推荐使用SSL加密，端口为465
+        props.put("mail.smtp.port", "465");
+        // 开启SSL加密
+        props.put("mail.smtp.ssl.enable", "true");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.socketFactory.port", "465");
+        // 强制使用 TLSv1.2 协议
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2");
         // 此处填写，写信人的账号
-        props.put("mail.user", "1274731114@qq.com");
+        props.put("mail.user", "1071300904@qq.com");
         // 此处填写16位STMP口令
-        props.put("mail.password", "riufdudshcaijdbi");
+        props.put("mail.password", "itrnrathmxezbbdg");
         // 构建授权信息，用于进行SMTP进行身份验证
         Authenticator authenticator = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
